@@ -1,0 +1,23 @@
+<div class="hs-login-wrapper">
+    <div class="card shadow rounded">
+        <div class="card-body">
+            <form autocomplete="off" [formGroup]="userForm" (ngSubmit)="joinRoom()">
+                <div class="form-group text-center">
+                    <h5 class="header">
+                        Chat App
+                    </h5>
+                </div>
+                <div class="form-group mb-hf">
+                    <input class="form-control" type="text" formControlName="userName" 
+                    placeholder="Enter User Name" autocomplete="disabled">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn w-100 btn-primary submitbutton" [disabled]="userForm.invalid">
+                        Start Chatting
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<app-chat-room *ngIf="showChatRoom" [userName]="this.userName?.value"></app-chat-room>
