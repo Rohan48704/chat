@@ -22,11 +22,11 @@
         <div class="col-sm-10  d-flex flex-column">
             <div class="box1">
                 <ng-container *ngFor="let message of messages;">
-                    <div class="message-right">
+                    <div class="message-right border rounded-pill w-25">
                         <div class="msg-to">
                             {{message.msg}}
                             <span class="time text-muted small">
-                                {{message.time|chatTime}} | {{message.user}}
+                                {{message.time|date:'shortTime'}} | {{message.user}}
                             </span>
                         </div>
                     </div>
